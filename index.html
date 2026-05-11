@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Arcane Magic Shop</title>
+    <meta name="description"
+        content="Premium Magic Shop & Illusion Supply Store. Discover beginner to pro tricks, DVDs, and stage illusions.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        neonPurple: '#bc13fe',
+                        electricBlue: '#00d2ff',
+                        mysticPink: '#f626af',
+                        gold: '#ffd700',
+                        deepBlack: '#050505',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body class="bg-deepBlack">
+    <div class="magic-bg"></div>
+    <div class="spotlight spotlight-follow"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-[100] glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
+                    <span
+                        class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-sm font-medium text-neonPurple transition-colors">Home 1</a>
+                    <a href="home2.html" class="text-sm font-medium hover:text-neonPurple transition-colors">Home 2</a>
+                    <a href="about.html" class="text-sm font-medium hover:text-neonPurple transition-colors">About</a>
+                    <a href="museum.html" class="text-sm font-medium hover:text-neonPurple transition-colors">The
+                        Museum</a>
+                    <a href="dvds.html" class="text-sm font-medium hover:text-neonPurple transition-colors">DVDs</a>
+                    <a href="stage-supplies.html"
+                        class="text-sm font-medium hover:text-neonPurple transition-colors">Stage Gear</a>
+                    <a href="booking.html"
+                        class="text-sm font-medium hover:text-neonPurple transition-colors ">Bookings</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium hover:text-neonPurple transition-colors">Contact</a>
+                </div>
+
+                <!-- Utilities -->
+                <div class="flex items-center gap-3">
+                    <div class="hidden sm:flex items-center gap-3 mr-2">
+                        <a href="signup.html"
+                            class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple transition-all">Signup</a>
+                    </div>
+                    <button id="theme-toggle" class="p-2 hover:bg-white/10 rounded-full transition-all"
+                        title="Toggle Theme">
+                        <i class="ri-sun-line text-xl"></i>
+                    </button>
+                    <button id="rtl-toggle"
+                        class="px-3 py-1 border border-white/20 rounded-lg text-xs font-bold hover:border-neonPurple transition-all"
+                        title="Switch Direction">
+                        RTL
+                    </button>
+                    <button id="menu-btn" class="lg:hidden p-2 hover:bg-white/10 rounded-full">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden flex-col glass border-t border-white/10 p-6 space-y-4 absolute w-full top-20 animate-fade-in bg-deepBlack/95 backdrop-blur-xl">
+            <a href="index.html" class="text-lg font-medium text-neonPurple border-b border-white/5 pb-2">Home 1</a>
+            <a href="home2.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Home
+                2</a>
+            <a href="about.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">About</a>
+            <a href="museum.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">The
+                Museum</a>
+            <a href="dvds.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">DVDs &
+                Tutorials</a>
+            <a href="stage-supplies.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Stage
+                Gear</a>
+            <a href="booking.html" class="text-lg font-medium text-gold border-b border-white/5 pb-2">Bookings</a>
+            <a href="contact.html"
+                class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Contact</a>
+            <div class="pt-4">
+                <a href="signup.html"
+                    class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-[calc(100vh-80px)] min-h-[700px] flex items-center overflow-hidden mt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?auto=format&fit=crop&q=80&w=2000"
+                alt="Arcane Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-deepBlack via-deepBlack/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
+            <div class="max-w-3xl mx-auto">
+                <div class="reveal">
+
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-magic font-bold mb-8 leading-tight">
+                        Unveil the <span class="text-neonPurple neon-text-purple italic">Impossible</span>
+                    </h1>
+                    <p class="text-xl text-white/70 mb-12 max-w-xl leading-relaxed mx-auto">
+                        The world's most exclusive supply for stage illusions, mentalism, and street magic. Elevate your
+                        craft with tools used by world champions.
+                    </p>
+                    <div class="flex flex-wrap gap-6 justify-center">
+                        <a href="museum.html"
+                            class="px-10 py-5 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30px_#bc13fe] hover:scale-105 transition-all flex items-center gap-2 group">
+                            Explore Museum <i
+                                class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="booking.html"
+                            class="px-10 py-5 glass border border-white/20 rounded-2xl font-bold hover:border-electricBlue hover:bg-white/5 transition-all">
+                            Book a Show
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Decorative Element -->
+        <div class="absolute bottom-12 right-12 hidden xl:block reveal delay-500">
+            <div class="glass p-6 rounded-3xl border border-white/10 shadow-2xl animate-float">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold">
+                        <i class="ri-vip-crown-fill text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-white/30 uppercase font-bold tracking-widest mb-1">Elite Collection
+                        </p>
+                        <p class="text-lg font-bold">The Ghost Box v2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-magic font-bold mb-4">Master Your <span
+                        class="text-electricBlue">Skill Level</span></h2>
+                <p class="text-white/50">From curious beginners to professional illusionists</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Beginner -->
+                <div class="glass-card p-10 rounded-[2.5rem] reveal delay-100 group text-center flex flex-col items-center">
+                    <div class="w-20 h-20 bg-neonPurple/20 rounded-[2rem] flex items-center justify-center mb-8 text-neonPurple text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-[0_0_30px_rgba(188,19,254,0.1)]">
+                        <i class="ri-seedling-line"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Apprentice</h3>
+                    <p class="text-white/50 mb-8 max-w-[280px]">Simple yet powerful sleight of hand and self-working miracles. Perfect for starting your journey.</p>
+                    <ul class="space-y-4 mb-10 text-sm text-white/70 w-full max-w-[200px] text-left">
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-neonPurple text-lg"></i> Card Basics</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-neonPurple text-lg"></i> Coin Vanish</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-neonPurple text-lg"></i> Prop Magic</li>
+                    </ul>
+                    <a href="museum.html" class="px-8 py-3 glass border border-white/10 rounded-xl text-neonPurple font-bold flex items-center gap-2 group-hover:bg-neonPurple/10 transition-all">
+                        Explore History <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+
+                <!-- Intermediate -->
+                <div class="glass-card p-10 rounded-[2.5rem] reveal delay-200 group border-electricBlue/30 text-center flex flex-col items-center">
+                    <div class="w-20 h-20 bg-electricBlue/20 rounded-[2rem] flex items-center justify-center mb-8 text-electricBlue text-4xl group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500 shadow-[0_0_30px_rgba(0,210,255,0.1)]">
+                        <i class="ri-fire-line"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Illusionist</h3>
+                    <p class="text-white/50 mb-8 max-w-[280px]">Advanced techniques, misdirection theory, and complex routines that leave minds baffled.</p>
+                    <ul class="space-y-4 mb-10 text-sm text-white/70 w-full max-w-[200px] text-left">
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-electricBlue text-lg"></i> Palming Techniques</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-electricBlue text-lg"></i> Mentalism Pro</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-electricBlue text-lg"></i> Gimmick Mastery</li>
+                    </ul>
+                    <a href="museum.html" class="px-8 py-3 glass border border-white/10 rounded-xl text-electricBlue font-bold flex items-center gap-2 group-hover:bg-electricBlue/10 transition-all">
+                        Explore History <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+
+                <!-- Advanced -->
+                <div class="glass-card p-10 rounded-[2.5rem] reveal delay-300 group text-center flex flex-col items-center">
+                    <div class="w-20 h-20 bg-mysticPink/20 rounded-[2rem] flex items-center justify-center mb-8 text-mysticPink text-4xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-[0_0_30px_rgba(246,38,175,0.1)]">
+                        <i class="ri-sparkling-2-line"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Grandmaster</h3>
+                    <p class="text-white/50 mb-8 max-w-[280px]">Professional stage illusions, high-end equipment, and masterclasses from world champions.</p>
+                    <ul class="space-y-4 mb-10 text-sm text-white/70 w-full max-w-[200px] text-left">
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-mysticPink text-lg"></i> Levitation Gear</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-mysticPink text-lg"></i> Escape Artistry</li>
+                        <li class="flex items-center gap-3"><i class="ri-checkbox-circle-line text-mysticPink text-lg"></i> Show Production</li>
+                    </ul>
+                    <a href="museum.html" class="px-8 py-3 glass border border-white/10 rounded-xl text-mysticPink font-bold flex items-center gap-2 group-hover:bg-mysticPink/10 transition-all">
+                        Explore History <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Kits Section -->
+    <section class="py-24 bg-white/5 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-magic font-bold mb-4 text-gold">Elite <span
+                            class="text-white">Illusion Kits</span></h2>
+                    <p class="text-white/50 max-w-md">Everything you need for a professional performance in a single
+                        box.</p>
+                </div>
+                <a href="museum.html"
+                    class="text-neonPurple font-bold flex items-center gap-2 hover:gap-4 transition-all">View Museum <i
+                        class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Kit 1 -->
+                <div class="glass-card rounded-[32px] p-4 reveal delay-100 group">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.pexels.com/photos/23379682/pexels-photo-23379682.jpeg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Kit">
+                        <div
+                            class="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold text-gold border border-gold/30">
+                            BEST SELLER</div>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-xl font-bold mb-2">The Street Performer Set</h3>
+                        <p class="text-sm text-white/50 mb-6">Contains 5 high-impact routines optimized for street and
+                            walk-around magic.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">$149.00</span>
+                            <button
+                                class="w-12 h-12 bg-neonPurple rounded-2xl flex items-center justify-center hover:shadow-[0_0_15px_#bc13fe] transition-all">
+                                <i class="ri-add-line text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kit 2 -->
+                <div class="glass-card rounded-[32px] p-4 reveal delay-200 group">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.pexels.com/photos/20797900/pexels-photo-20797900.jpeg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Kit">
+                        <div
+                            class="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold text-mysticPink border border-mysticPink/30">
+                            NEW ARRIVAL</div>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-xl font-bold mb-2">Mentalism Core v2</h3>
+                        <p class="text-sm text-white/50 mb-6">Prop-heavy kit for modern mentalists. Includes the Oracle
+                            Book and Ghost Box.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">$199.00</span>
+                            <button
+                                class="w-12 h-12 bg-mysticPink rounded-2xl flex items-center justify-center hover:shadow-[0_0_15px_#f626af] transition-all">
+                                <i class="ri-add-line text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kit 3 -->
+                <div class="glass-card rounded-[32px] p-4 reveal delay-300 group">
+                    <div class="relative h-64 rounded-2xl overflow-hidden mb-6">
+                        <img src="https://images.pexels.com/photos/9393042/pexels-photo-9393042.jpeg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Kit">
+                        <div
+                            class="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-bold text-electricBlue border border-electricBlue/30">
+                            PREMIUM</div>
+                    </div>
+                    <div class="px-4 pb-4">
+                        <h3 class="text-xl font-bold mb-2">Grandmaster Illusion Set</h3>
+                        <p class="text-sm text-white/50 mb-6">Elite stage gear including the Chrome Rings and Velvet
+                            Misdirection Cabinet.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-white">$299.00</span>
+                            <button
+                                class="w-12 h-12 bg-electricBlue rounded-2xl flex items-center justify-center hover:shadow-[0_0_15px_#00d2ff] transition-all">
+                                <i class="ri-add-line text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 relative px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-magic font-bold mb-12 text-center">Frequently Asked <span
+                    class="text-neonPurple">Questions</span></h2>
+            <div class="space-y-4">
+                <div
+                    class="glass p-6 rounded-2xl border border-white/10 hover:border-neonPurple/30 transition-all cursor-pointer">
+                    <h4 class="font-bold flex justify-between items-center">How long does shipping take for illusion
+                        gear? <i class="ri-add-line"></i></h4>
+                    <p class="text-sm text-white/50 mt-4 hidden">Most items ship within 24 hours. Custom stage builds
+                        can take 4-8 weeks.</p>
+                </div>
+                <div
+                    class="glass p-6 rounded-2xl border border-white/10 hover:border-neonPurple/30 transition-all cursor-pointer">
+                    <h4 class="font-bold flex justify-between items-center">Are the tutorials suitable for complete
+                        beginners? <i class="ri-add-line"></i></h4>
+                </div>
+                <div
+                    class="glass p-6 rounded-2xl border border-white/10 hover:border-neonPurple/30 transition-all cursor-pointer">
+                    <h4 class="font-bold flex justify-between items-center">Can I book a magician for international
+                        events? <i class="ri-add-line"></i></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="py-32 px-4 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="glass p-12 md:p-20 rounded-[4rem] border border-white/10 relative overflow-hidden group">
+                <!-- Background Glow -->
+                <div
+                    class="absolute -top-24 -right-24 w-96 h-96 bg-neonPurple/20 blur-[120px] group-hover:bg-neonPurple/30 transition-all duration-1000">
+                </div>
+                <div
+                    class="absolute -bottom-24 -left-24 w-96 h-96 bg-electricBlue/20 blur-[120px] group-hover:bg-electricBlue/30 transition-all duration-1000">
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div class="reveal">
+                        <span class="text-gold font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Elite
+                            Access</span>
+                        <h2 class="text-5xl md:text-7xl font-magic font-bold mb-8 leading-tight">Join the <br><span
+                                class="text-neonPurple italic">Arcane Sanctum</span></h2>
+                        <p class="text-xl text-white/50 mb-10 leading-relaxed">
+                            Unlock the final tier of mastery. Members receive early access to custom-built illusions,
+                            monthly live stream workshops, and secret invitations to midnight performances.
+                        </p>
+                        <div class="flex flex-wrap gap-6">
+                            <a href="signup.html"
+                                class="px-12 py-5 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30px_#bc13fe] hover:scale-105 transition-all text-lg">Join
+                                the Circle</a>
+                            <div class="flex items-center gap-4 text-white/40">
+                                <i class="ri-checkbox-circle-fill text-2xl text-gold"></i>
+                                <span class="font-bold uppercase tracking-widest text-xs">Members Only Benefits</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative reveal delay-200">
+                        <div class="relative group">
+                            <img src="membership-card.png" 
+                                class="rounded-[3rem] border border-white/20 shadow-2xl backdrop-blur-3xl transform rotate-3 hover:rotate-0 transition-transform duration-700 w-full" 
+                                alt="Arcane Membership Card">
+                            <div class="absolute inset-0 rounded-[3rem] bg-gradient-to-tr from-neonPurple/20 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <!-- Decoration -->
+                        <div
+                            class="absolute -top-10 -right-10 w-24 h-24 bg-gold/20 rounded-full blur-2xl animate-pulse">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 glass border-t border-white/10 relative overflow-hidden mt-20">
+        <!-- Decoration -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-neonPurple/50 to-transparent">
+        </div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-neonPurple/5 blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
+                    <span
+                        class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
+                </div>
+                <p class="text-white/50 max-w-sm mb-8 leading-relaxed">
+                    Unlocking the secrets of the impossible since 1895. Join our legacy of wonder and mastery.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-neonPurple hover:scale-110 transition-all duration-300"
+                        title="Instagram"><i class="ri-instagram-line text-xl"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-neonPurple hover:scale-110 transition-all duration-300"
+                        title="YouTube"><i class="ri-youtube-line text-xl"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-neonPurple hover:scale-110 transition-all duration-300"
+                        title="Facebook"><i class="ri-facebook-fill text-xl"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-8 uppercase tracking-[0.2em] text-xs">Shop Secrets</h4>
+                <ul class="space-y-4">
+                    <li><a href="museum.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> The Museum</a></li>
+                    <li><a href="dvds.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> Academy</a></li>
+                    <li><a href="stage-supplies.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> Stage Gear</a></li>
+                    <li><a href="booking.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> Bookings</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-8 uppercase tracking-[0.2em] text-xs">Quick Links</h4>
+                <ul class="space-y-4">
+                    <li><a href="about.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> About Us</a></li>
+                    <li><a href="contact.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> Contact</a></li>
+                    <li><a href="login.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> My Account</a></li>
+                    <li><a href="signup.html"
+                            class="text-white/50 hover:text-white hover:translate-x-1 transition-all flex items-center gap-2"><i
+                                class="ri-arrow-right-s-line text-neonPurple"></i> Join the Circle</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gold font-bold mb-8 uppercase tracking-[0.2em] text-xs">Newsletter</h4>
+                <p class="text-sm text-white/50 mb-6 leading-relaxed">Get weekly performance tips, exclusive tutorials,
+                    and secret discounts.</p>
+                <form class="space-y-4">
+                    <div class="relative">
+                        <i class="ri-mail-line absolute left-4 top-1/2 -translate-y-1/2 text-white/30"></i>
+                        <input type="email" placeholder="Email Address"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-4 py-4 focus:outline-none focus:border-neonPurple transition-all text-sm">
+                    </div>
+                    <button
+                        class="w-full py-4 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30px_#bc13fe] hover:scale-[1.02] active:scale-[0.98] transition-all">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] uppercase tracking-widest font-bold">
+            <p>© 2026 Arcane Wonders. All Rights Reserved.</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
