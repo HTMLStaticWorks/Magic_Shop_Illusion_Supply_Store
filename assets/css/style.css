@@ -139,3 +139,134 @@ body {
 @media (max-width: 768px) {
     .glass { backdrop-filter: blur(8px); }
 }
+
+/* Light Mode Utility Overrides */
+[data-theme="light"] .text-white { color: #1a1a1a !important; }
+[data-theme="light"] .text-white\/10 { color: rgba(26, 26, 26, 0.1) !important; }
+[data-theme="light"] .text-white\/20 { color: rgba(26, 26, 26, 0.2) !important; }
+[data-theme="light"] .text-white\/30 { color: rgba(26, 26, 26, 0.3) !important; }
+[data-theme="light"] .text-white\/40 { color: rgba(26, 26, 26, 0.4) !important; }
+[data-theme="light"] .text-white\/50 { color: rgba(26, 26, 26, 0.5) !important; }
+[data-theme="light"] .text-white\/60 { color: rgba(26, 26, 26, 0.6) !important; }
+[data-theme="light"] .text-white\/70 { color: rgba(26, 26, 26, 0.7) !important; }
+[data-theme="light"] .text-white\/80 { color: rgba(26, 26, 26, 0.8) !important; }
+[data-theme="light"] .text-white\/90 { color: rgba(26, 26, 26, 0.9) !important; }
+
+[data-theme="light"] .border-white { border-color: #1a1a1a !important; }
+[data-theme="light"] .border-white\/5 { border-color: rgba(26, 26, 26, 0.05) !important; }
+[data-theme="light"] .border-white\/10 { border-color: rgba(26, 26, 26, 0.1) !important; }
+[data-theme="light"] .border-white\/20 { border-color: rgba(26, 26, 26, 0.2) !important; }
+[data-theme="light"] .border-white\/30 { border-color: rgba(26, 26, 26, 0.3) !important; }
+[data-theme="light"] .border-white\/40 { border-color: rgba(26, 26, 26, 0.4) !important; }
+[data-theme="light"] .border-white\/50 { border-color: rgba(26, 26, 26, 0.5) !important; }
+
+[data-theme="light"] .bg-white { background-color: #1a1a1a !important; }
+[data-theme="light"] .bg-white\/5 { background-color: rgba(26, 26, 26, 0.05) !important; }
+[data-theme="light"] .bg-white\/10 { background-color: rgba(26, 26, 26, 0.1) !important; }
+[data-theme="light"] .bg-white\/20 { background-color: rgba(26, 26, 26, 0.2) !important; }
+
+[data-theme="light"] .hover\:text-white:hover { color: #1a1a1a !important; }
+[data-theme="light"] .hover\:bg-white\/5:hover { background-color: rgba(26, 26, 26, 0.05) !important; }
+[data-theme="light"] .hover\:bg-white\/10:hover { background-color: rgba(26, 26, 26, 0.1) !important; }
+[data-theme="light"] .hover\:border-white\/20:hover { border-color: rgba(26, 26, 26, 0.2) !important; }
+
+/* Light Mode Gradients and Backgrounds for deepBlack */
+[data-theme="light"] .from-deepBlack {
+    --tw-gradient-from: #f8f9fa var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgba(248, 249, 250, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .from-deepBlack\/80 {
+    --tw-gradient-from: rgba(248, 249, 250, 0.8) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgba(248, 249, 250, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .via-deepBlack\/40 {
+    --tw-gradient-to: rgba(248, 249, 250, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 249, 250, 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .via-deepBlack\/60 {
+    --tw-gradient-to: rgba(248, 249, 250, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 249, 250, 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .via-deepBlack\/80 {
+    --tw-gradient-to: rgba(248, 249, 250, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(248, 249, 250, 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] .to-deepBlack {
+    --tw-gradient-to: #f8f9fa var(--tw-gradient-to-position) !important;
+}
+
+[data-theme="light"] .bg-deepBlack { background-color: #f8f9fa !important; }
+[data-theme="light"] .bg-deepBlack\/50 { background-color: rgba(248, 249, 250, 0.5) !important; }
+[data-theme="light"] .bg-deepBlack\/60 { background-color: rgba(248, 249, 250, 0.6) !important; }
+[data-theme="light"] .bg-deepBlack\/80 { background-color: rgba(248, 249, 250, 0.8) !important; }
+[data-theme="light"] .bg-deepBlack\/90 { background-color: rgba(248, 249, 250, 0.9) !important; }
+[data-theme="light"] .bg-deepBlack\/95 { background-color: rgba(248, 249, 250, 0.95) !important; }
+
+/* Keep Hero Section Image Overlays Dark and Text White in Light Mode */
+[data-theme="light"] section:first-of-type .from-deepBlack {
+    --tw-gradient-from: #050505 var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgba(5, 5, 5, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] section:first-of-type .from-deepBlack\/80 {
+    --tw-gradient-from: rgba(5, 5, 5, 0.8) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgba(5, 5, 5, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] section:first-of-type .via-deepBlack\/40 {
+    --tw-gradient-to: rgba(5, 5, 5, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(5, 5, 5, 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] section:first-of-type .via-deepBlack\/60 {
+    --tw-gradient-to: rgba(5, 5, 5, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(5, 5, 5, 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] section:first-of-type .via-deepBlack\/80 {
+    --tw-gradient-to: rgba(5, 5, 5, 0) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), rgba(5, 5, 5, 0.8) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+[data-theme="light"] section:first-of-type .to-deepBlack {
+    --tw-gradient-to: #050505 var(--tw-gradient-to-position) !important;
+}
+
+[data-theme="light"] section:first-of-type {
+    color: white !important;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+[data-theme="light"] section:first-of-type h1,
+[data-theme="light"] section:first-of-type h2,
+[data-theme="light"] section:first-of-type p {
+    color: white !important;
+}
+[data-theme="light"] section:first-of-type .text-white { color: white !important; }
+[data-theme="light"] section:first-of-type .text-white\/70 { color: rgba(255, 255, 255, 0.7) !important; }
+[data-theme="light"] section:first-of-type .text-white\/60 { color: rgba(255, 255, 255, 0.6) !important; }
+[data-theme="light"] section:first-of-type .text-white\/50 { color: rgba(255, 255, 255, 0.5) !important; }
+[data-theme="light"] section:first-of-type .text-white\/40 { color: rgba(255, 255, 255, 0.4) !important; }
+[data-theme="light"] section:first-of-type .text-white\/30 { color: rgba(255, 255, 255, 0.3) !important; }
+[data-theme="light"] section:first-of-type .text-white\/20 { color: rgba(255, 255, 255, 0.2) !important; }
+
+[data-theme="light"] section:first-of-type .border-white { border-color: white !important; }
+[data-theme="light"] section:first-of-type .border-white\/5 { border-color: rgba(255, 255, 255, 0.05) !important; }
+[data-theme="light"] section:first-of-type .border-white\/10 { border-color: rgba(255, 255, 255, 0.1) !important; }
+[data-theme="light"] section:first-of-type .border-white\/20 { border-color: rgba(255, 255, 255, 0.2) !important; }
+[data-theme="light"] section:first-of-type .border-white\/30 { border-color: rgba(255, 255, 255, 0.3) !important; }
+[data-theme="light"] section:first-of-type .border-white\/40 { border-color: rgba(255, 255, 255, 0.4) !important; }
+[data-theme="light"] section:first-of-type .border-white\/50 { border-color: rgba(255, 255, 255, 0.5) !important; }
+
+[data-theme="light"] section:first-of-type .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
+[data-theme="light"] section:first-of-type .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1) !important; }
+[data-theme="light"] section:first-of-type .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2) !important; }
