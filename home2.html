@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -53,11 +53,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span
                         class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-6">
@@ -77,18 +77,19 @@
 
                 <!-- Utilities -->
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-lg transition-all"
+                    <button id="theme-toggle"
+                        class="hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
                         title="Toggle Theme">
                         <i class="ri-sun-line text-xl"></i>
                     </button>
                     <button id="rtl-toggle"
-                        class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:border-neonPurple transition-all"
+                        class="hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
                         title="Switch Direction">
                         RTL
                     </button>
-                    <div class="hidden sm:flex items-center gap-3 mr-2">
+                    <div class="hidden lg:flex items-center gap-3 mr-2">
                         <a href="signup.html"
-                            class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple transition-all">Signup</a>
+                            class="h-10 px-4 flex items-center justify-center bg-white/5 border border-white/20 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple hover:shadow-[0_0_15px_rgba(188,19,254,0.3)] transition-all">Signup</a>
                     </div>
                     <button id="menu-btn" class="lg:hidden p-2 hover:bg-white/10 rounded-full">
                         <i class="ri-menu-line text-2xl"></i>
@@ -118,6 +119,18 @@
             <a href="booking.html" class="text-lg font-medium text-gold border-b border-white/5 pb-2">Bookings</a>
             <a href="contact.html"
                 class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Contact</a>
+            <div class="flex items-center gap-4 pt-4 border-t border-white/5 sm:hidden">
+                <button id="theme-toggle"
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Toggle Theme">
+                    <i class="ri-sun-line text-xl"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Switch Direction">
+                    RTL
+                </button>
+            </div>
             <div class="pt-4">
                 <a href="signup.html"
                     class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
@@ -127,7 +140,7 @@
 
     <!-- Editorial Hero -->
     <!-- Hero Section -->
-    <section class="relative h-[calc(100vh-80px)] min-h-[800px] flex items-center overflow-hidden mt-20">
+    <section class="relative h-auto min-h-screen py-24 md:py-0 md:h-[calc(100vh-80px)] md:min-h-[800px] flex items-center overflow-hidden mt-20">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1504194104404-433180773017?auto=format&fit=crop&q=80&w=2000"
@@ -141,26 +154,29 @@
                 <!-- Cover Story Content -->
                 <div class="reveal">
 
-                    <h2 class="text-6xl md:text-8xl font-magic font-bold mb-8 leading-[1.1]">
+                    <h2 class="text-5xl md:text-8xl font-magic font-bold mb-8 leading-[1.1]">
                         The <span class="text-electricBlue italic">Psychology</span> of Misdirection
                     </h2>
-                    <p class="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-12">
+                    <p class="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-12">
                         How modern neuroscience is helping magicians create more powerful illusions than ever before.
                         Explore the mechanics of the human mind.
                     </p>
-                    <div class="flex flex-wrap justify-center gap-6 mb-20">
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20 max-w-sm mx-auto sm:max-w-none">
                         <a href="#"
-                            class="inline-flex items-center gap-3 px-10 py-5 bg-white text-deepBlack rounded-2xl font-bold hover:bg-electricBlue hover:text-white transition-all transform hover:scale-105">
-                            Read Article <i class="ri-book-open-line"></i>
+                            class="w-full sm:w-auto px-10 py-5 bg-white text-deepBlack rounded-full font-bold hover:bg-neonPurple hover:text-white transition-all text-center flex items-center justify-center gap-2 group">
+                            Read Article <i class="ri-book-open-line group-hover:rotate-12 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-full sm:w-auto px-8 py-4 glass border border-white/10 rounded-full font-bold hover:border-white transition-all text-center">
+                            Browse Archive
                         </a>
                     </div>
                 </div>
 
-                <!-- Featured Panels (Centered) -->
-                <div class="grid md:grid-cols-2 gap-8 reveal delay-300">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                     <!-- Events Card -->
                     <div
-                        class="glass p-8 rounded-[2.5rem] border border-white/20 shadow-2xl backdrop-blur-xl text-left">
+                        class="glass p-6 md:p-8 rounded-[2.5rem] border border-white/20 shadow-2xl backdrop-blur-xl text-left reveal">
                         <h3 class="text-xl font-bold mb-8 flex items-center gap-2">
                             <i class="ri-calendar-event-line text-electricBlue"></i> Upcoming Events
                         </h3>
@@ -194,7 +210,7 @@
 
                     <!-- Join Card -->
                     <div
-                        class="glass p-8 rounded-[2.5rem] border border-neonPurple/30 shadow-2xl backdrop-blur-xl bg-neonPurple/10 text-left flex flex-col justify-between">
+                        class="glass p-6 md:p-8 rounded-[2.5rem] border border-neonPurple/30 shadow-2xl backdrop-blur-xl bg-neonPurple/10 text-left flex flex-col justify-between reveal delay-200">
                         <div>
                             <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
                                 <i class="ri-radar-line text-neonPurple"></i> Join the Inner Circle
@@ -211,26 +227,16 @@
         </div>
     </section> <!-- Trending Tricks Slider (Mockup) -->
     <section class="pt-32 pb-12 overflow-hidden bg-deepBlack">
-        <div class="max-w-7xl mx-auto px-4 mb-16 reveal flex flex-col md:flex-row justify-center items-center relative">
-            <div class="text-center w-full">
-                <span class="text-electricBlue font-bold tracking-[0.3em] uppercase text-[10px] mb-4 block text-center">Current
-                    Obsessions</span>
-                <h2 class="text-4xl md:text-5xl font-magic font-bold text-center">Trending <span
-                        class="italic text-white">Illusions</span></h2>
-            </div>
-            <div class="flex gap-4 mt-8 md:mt-0 md:absolute md:right-4 md:top-1/2 md:-translate-y-1/2">
-                <button
-                    class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all"><i
-                        class="ri-arrow-left-s-line"></i></button>
-                <button
-                    class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all"><i
-                        class="ri-arrow-right-s-line"></i></button>
-            </div>
+        <div class="max-w-7xl mx-auto px-4 mb-16 reveal text-center">
+            <span class="text-electricBlue font-bold tracking-[0.3em] uppercase text-[10px] mb-4 block">Current
+                Obsessions</span>
+            <h2 class="text-4xl md:text-5xl font-magic font-bold">Trending <span
+                    class="italic text-white">Illusions</span></h2>
         </div>
-        <div class="flex gap-8 animate-scroll px-4 pb-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
             <!-- Card 1 -->
             <div
-                class="min-w-[350px] glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-neonPurple/30 transition-all">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group transition-all reveal">
                 <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
                     <img src="https://images.pexels.com/photos/6255136/pexels-photo-6255136.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -251,7 +257,7 @@
             </div>
             <!-- Card 2 -->
             <div
-                class="min-w-[350px] glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-electricBlue/30 transition-all">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-electricBlue/30 transition-all reveal delay-100">
                 <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
                     <img src="https://images.pexels.com/photos/20797903/pexels-photo-20797903.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -272,7 +278,7 @@
             </div>
             <!-- Card 3 -->
             <div
-                class="min-w-[350px] glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-mysticPink/30 transition-all">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-mysticPink/30 transition-all reveal delay-200">
                 <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
                     <img src="https://images.pexels.com/photos/17139407/pexels-photo-17139407.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -293,7 +299,7 @@
             </div>
             <!-- Card 4 -->
             <div
-                class="min-w-[350px] glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-gold/30 transition-all">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-gold/30 transition-all reveal delay-300">
                 <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
                     <img src="https://images.pexels.com/photos/11634143/pexels-photo-11634143.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -631,11 +637,11 @@
 
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
             <div class="lg:col-span-1">
-                <div class="flex items-center gap-2 mb-6">
+                <a href="index.html" class="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span
                         class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
                 <p class="text-white/50 max-w-sm mb-8 leading-relaxed">
                     Unlocking the secrets of the impossible since 1895. Join our legacy of wonder and mastery.
                 </p>
@@ -706,7 +712,7 @@
 
         <div
             class="max-w-7xl mx-auto px-4 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] uppercase tracking-widest font-bold">
-            <p>© 2026 Arcane Wonders. All Rights Reserved.</p>
+            <p>© 2026 <a href="index.html" class="hover:text-neonPurple transition-colors">Arcane Wonders</a>. All Rights Reserved.</p>
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Terms of Service</a>

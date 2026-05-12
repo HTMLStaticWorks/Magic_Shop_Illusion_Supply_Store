@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -40,16 +40,7 @@
             background-position: center;
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
         .exhibit-card {
             background: rgba(255, 255, 255, 0.02);
@@ -77,11 +68,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span
                         class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-6">
@@ -100,18 +91,19 @@
 
                 <!-- Utilities -->
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-lg transition-all"
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
                         title="Toggle Theme">
                         <i class="ri-sun-line text-xl"></i>
                     </button>
                     <button id="rtl-toggle"
-                        class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:border-neonPurple transition-all"
+                        class="rtl-toggle-btn hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
                         title="Switch Direction">
                         RTL
                     </button>
-                    <div class="hidden sm:flex items-center gap-3 mr-2">
+                    <div class="hidden lg:flex items-center gap-3 mr-2">
                         <a href="signup.html"
-                            class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple transition-all">Signup</a>
+                            class="h-10 px-4 flex items-center justify-center bg-white/5 border border-white/20 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple hover:shadow-[0_0_15px_rgba(188,19,254,0.3)] transition-all">Signup</a>
                     </div>
                     <button id="menu-btn" class="lg:hidden p-2 hover:bg-white/10 rounded-full">
                         <i class="ri-menu-line text-2xl"></i>
@@ -142,14 +134,27 @@
             <a href="booking.html" class="text-lg font-medium text-gold border-b border-white/5 pb-2">Bookings</a>
             <a href="contact.html"
                 class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Contact</a>
+            <div class="flex items-center gap-4 pt-4 border-t border-white/5 sm:hidden">
+                <button id="theme-toggle"
+                    class="theme-toggle-btn w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Toggle Theme">
+                    <i class="ri-sun-line text-xl"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="rtl-toggle-btn w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Switch Direction">
+                    RTL
+                </button>
+            </div>
             <div class="pt-4">
-                <a href="signup.html" class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
+                <a href="signup.html"
+                    class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
             </div>
         </div>
     </nav>
 
     <!-- Banner Hero -->
-    <section class="relative h-[40vh] min-h-[400px] flex items-center overflow-hidden mt-20">
+    <section class="relative h-auto min-h-[500px] py-32 flex items-center overflow-hidden mt-20">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&q=80&w=2000"
                 class="w-full h-full object-cover" alt="Museum Hero">
@@ -159,7 +164,7 @@
         <div class="max-w-7xl mx-auto px-4 w-full relative z-10 text-center">
             <div class="reveal">
 
-                <h1 class="text-6xl md:text-9xl font-magic font-bold mb-8">The <span
+                <h1 class="text-5xl md:text-8xl font-magic font-bold mb-8">The <span
                         class="text-neonPurple">Sanctum</span></h1>
                 <p class="text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-10">
                     Step into the silent corridors of history. The Sanctum preserves the guarded ingenuity of the
@@ -190,16 +195,57 @@
         </div>
     </section>
 
+    <!-- Artifact of the Month -->
+    <section class="py-32 relative overflow-hidden bg-deepBlack">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-neonPurple/10 blur-[150px]"></div>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <span class="text-neonPurple font-bold tracking-[0.3em] uppercase text-xs mb-6 block">Featured
+                        Highlight</span>
+                    <h2 class="text-4xl md:text-6xl font-magic font-bold mb-8">The Chronos <span
+                            class="text-neonPurple">Amulet</span></h2>
+                    <p class="text-white/60 text-lg leading-relaxed mb-10">
+                        Discovered in the ruins of a 17th-century Parisian workshop, the Chronos Amulet is said to have
+                        belonged to the legendary illusionist 'Cagliostro'. Its inner mechanisms defy contemporary
+                        physics, featuring gears that turn even when isolated from gravity.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div class="glass p-6 rounded-2xl border border-white/5">
+                            <span class="text-gold font-bold block mb-2">Origin</span>
+                            <span class="text-sm text-white/40">Paris, 1684</span>
+                        </div>
+                        <div class="glass p-6 rounded-2xl border border-white/5">
+                            <span class="text-gold font-bold block mb-2">Material</span>
+                            <span class="text-sm text-white/40">Meteoric Iron</span>
+                        </div>
+                    </div>
+                    <button
+                        class="px-10 py-4 bg-white text-deepBlack font-bold rounded-2xl hover:bg-neonPurple hover:text-white transition-all shadow-xl">Reserve
+                        Viewing Session</button>
+                </div>
+                <div class="relative reveal group">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-tr from-neonPurple/30 to-electricBlue/30 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <img src="https://images.pexels.com/photos/9312151/pexels-photo-9312151.jpeg"
+                        class="rounded-[3rem] border border-white/10 relative z-10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+                        alt="Artifact">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Exhibits Grid -->
     <section id="exhibits" class="py-32 bg-white/[0.02]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-24 reveal">
                 <h2 class="text-4xl md:text-6xl font-magic font-bold mb-6">Current <span
                         class="text-electricBlue">Exhibits</span></h2>
-                <p class="text-white/50">Four chambers of wonder, thousands of stories.</p>
+                <p class="text-white/50">Nine chambers of wonder, thousands of stories.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Exhibit 1: Houdini -->
                 <div class="exhibit-card rounded-[3rem] overflow-hidden reveal group">
                     <div class="h-[400px] overflow-hidden relative">
@@ -219,7 +265,8 @@
                             Featuring original escape gear used by Harry Houdini during his legendary 1912 world tour.
                             See the 'Water Torture Cell' keys and the 'Handcuff King's' personal ledger.
                         </p>
-                        <button class="text-gold font-bold flex items-center gap-2 group/btn">
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-sm hover:border-gold hover:text-gold transition-all flex items-center gap-2 group/btn">
                             View Artifacts <i
                                 class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
                         </button>
@@ -246,7 +293,8 @@
                             Step back into the 16th century. Our collection includes original alchemical tomes, medieval
                             sleight-of-hand tools, and the mysterious 'Oracle Bowl' of Delphi.
                         </p>
-                        <button class="text-electricBlue font-bold flex items-center gap-2 group/btn">
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-sm hover:border-electricBlue hover:text-electricBlue transition-all flex items-center gap-2 group/btn">
                             View Artifacts <i
                                 class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
                         </button>
@@ -272,7 +320,8 @@
                             Discover the clockwork wonders of the 18th century. Witness the 'Chess-Playing Turk' and the
                             self-writing 'Boy Automaton' in a rare live demonstration.
                         </p>
-                        <button class="text-mysticPink font-bold flex items-center gap-2 group/btn">
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-sm hover:border-mysticPink hover:text-mysticPink transition-all flex items-center gap-2 group/btn">
                             View Artifacts <i
                                 class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
                         </button>
@@ -281,7 +330,7 @@
 
                 <!-- Exhibit 4: Modern -->
                 <div class="exhibit-card rounded-[3rem] overflow-hidden reveal delay-200 group">
-                    <div class="h-[400px] overflow-hidden relative">
+                    <div class="h-[300px] overflow-hidden relative">
                         <img src="https://images.pexels.com/photos/7979069/pexels-photo-7979069.jpeg"
                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                             alt="Modern Exhibit">
@@ -290,18 +339,271 @@
                         <div class="absolute bottom-8 left-8">
                             <span class="text-neonPurple text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
                                 IV</span>
-                            <h3 class="text-3xl font-bold">The Future of Illusion</h3>
+                            <h3 class="text-2xl font-bold">The Future</h3>
                         </div>
                     </div>
-                    <div class="p-10">
-                        <p class="text-white/60 leading-relaxed mb-8">
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
                             From digital misdirection to aerospace-grade levitation rigs. See the evolution of magic
-                            through the lens of modern technology and psychology.
+                            through the lens of modern tech.
                         </p>
-                        <button class="text-neonPurple font-bold flex items-center gap-2 group/btn">
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-neonPurple hover:text-neonPurple transition-all flex items-center gap-2 group/btn">
                             View Artifacts <i
                                 class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
                         </button>
+                    </div>
+                </div>
+
+                <!-- Exhibit 5: Mentalism -->
+                <div class="exhibit-card rounded-[3rem] overflow-hidden reveal group">
+                    <div class="h-[300px] overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/12963701/pexels-photo-12963701.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Mentalism">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <span class="text-gold text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
+                                V</span>
+                            <h3 class="text-2xl font-bold">Psychology Lab</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
+                            Explore the lab where misdirection is mapped. See the cognitive research that fuels today's
+                            greatest mentalists.
+                        </p>
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-gold hover:text-gold transition-all flex items-center gap-2 group/btn">
+                            View Artifacts <i
+                                class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exhibit 6: Cardistry -->
+                <div class="exhibit-card rounded-[3rem] overflow-hidden reveal delay-100 group">
+                    <div class="h-[300px] overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/35176748/pexels-photo-35176748.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Cardistry">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <span
+                                class="text-electricBlue text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
+                                VI</span>
+                            <h3 class="text-2xl font-bold">Cardistry Vault</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
+                            A tribute to the art of the flourish. Discover the history of playing cards and the rare
+                            decks that define the craft.
+                        </p>
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-electricBlue hover:text-electricBlue transition-all flex items-center gap-2 group/btn">
+                            View Artifacts <i
+                                class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exhibit 7: Workshop -->
+                <div class="exhibit-card rounded-[3rem] overflow-hidden reveal delay-200 group">
+                    <div class="h-[300px] overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/5916129/pexels-photo-5916129.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Workshop">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <span class="text-mysticPink text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
+                                VII</span>
+                            <h3 class="text-2xl font-bold">The Forge</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
+                            See where the impossible is built. A reconstruction of Alexander Thorne's original workshop
+                            and tools.
+                        </p>
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-mysticPink hover:text-mysticPink transition-all flex items-center gap-2 group/btn">
+                            View Artifacts <i
+                                class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exhibit 8: Library -->
+                <div class="exhibit-card rounded-[3rem] overflow-hidden reveal group">
+                    <div class="h-[300px] overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/6255141/pexels-photo-6255141.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Library">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <span class="text-neonPurple text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
+                                VIII</span>
+                            <h3 class="text-2xl font-bold">Hidden Library</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
+                            Thousands of rare tomes and secret manuscripts. The world's most complete collection of
+                            magic literature.
+                        </p>
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-neonPurple hover:text-neonPurple transition-all flex items-center gap-2 group/btn">
+                            View Artifacts <i
+                                class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exhibit 9: Grand Illusions -->
+                <div class="exhibit-card rounded-[3rem] overflow-hidden reveal delay-100 group">
+                    <div class="h-[300px] overflow-hidden relative">
+                        <img src="https://images.pexels.com/photos/20797922/pexels-photo-20797922.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                            alt="Grand Illusions">
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-8">
+                            <span class="text-gold text-xs font-bold tracking-widest uppercase mb-2 block">Chamber
+                                IX</span>
+                            <h3 class="text-2xl font-bold">The Stage</h3>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-white/60 leading-relaxed mb-6 text-sm">
+                            Witness the massive stage props that defined 20th-century spectacles. From levitating cars
+                            to disappearing tigers.
+                        </p>
+                        <button
+                            class="px-6 py-3 border border-white/10 rounded-xl font-bold text-xs hover:border-gold hover:text-gold transition-all flex items-center gap-2 group/btn">
+                            View Artifacts <i
+                                class="ri-arrow-right-line group-hover/btn:translate-x-2 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Timeline -->
+    <section class="py-32 bg-deepBlack">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-20 reveal">
+                <span class="text-gold font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Journey</span>
+                <h2 class="text-4xl md:text-6xl font-magic font-bold">Legacy <span
+                        class="text-gold italic">Timeline</span></h2>
+            </div>
+            <div
+                class="relative space-y-20 before:absolute before:left-[50%] before:top-0 before:h-full before:w-px before:bg-white/10 before:-translate-x-1/2 hidden md:block">
+                <!-- Timeline 1 -->
+                <div class="flex items-center justify-between w-full reveal">
+                    <div class="w-[45%] text-right pr-12">
+                        <span class="text-3xl font-bold text-neonPurple mb-4 block">1895</span>
+                        <h4 class="text-xl font-bold mb-4">The Foundation</h4>
+                        <p class="text-white/40">Alexander Thorne opens the first 'Arcane Workshop' in London, focusing
+                            on brass clockwork illusions.</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-deepBlack border-4 border-neonPurple rounded-full absolute left-1/2 -translate-x-1/2 z-10 shadow-[0_0_20px_#bc13fe]">
+                    </div>
+                    <div class="w-[45%]"></div>
+                </div>
+                <!-- Timeline 2 -->
+                <div class="flex items-center justify-between w-full reveal">
+                    <div class="w-[45%]"></div>
+                    <div
+                        class="w-12 h-12 bg-deepBlack border-4 border-electricBlue rounded-full absolute left-1/2 -translate-x-1/2 z-10 shadow-[0_0_20px_#00d2ff]">
+                    </div>
+                    <div class="w-[45%] pl-12">
+                        <span class="text-3xl font-bold text-electricBlue mb-4 block">1942</span>
+                        <h4 class="text-xl font-bold mb-4">The War Secrets</h4>
+                        <p class="text-white/40">Arcane contributes misdirection techniques to the Allied forces,
+                            evolving psychological magic.</p>
+                    </div>
+                </div>
+                <!-- Timeline 3 -->
+                <div class="flex items-center justify-between w-full reveal">
+                    <div class="w-[45%] text-right pr-12">
+                        <span class="text-3xl font-bold text-mysticPink mb-4 block">1988</span>
+                        <h4 class="text-xl font-bold mb-4">Las Vegas Debut</h4>
+                        <p class="text-white/40">The Museum moves to its current home in Nevada, becoming the world's
+                            largest repository of magic.</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-deepBlack border-4 border-mysticPink rounded-full absolute left-1/2 -translate-x-1/2 z-10 shadow-[0_0_20px_#f626af]">
+                    </div>
+                    <div class="w-[45%]"></div>
+                </div>
+            </div>
+            <!-- Mobile Timeline (Simplified) -->
+            <div class="md:hidden space-y-12 px-6">
+                <div class="border-l-2 border-neonPurple pl-8 relative reveal">
+                    <div class="w-4 h-4 bg-neonPurple rounded-full absolute -left-[9px] top-2"></div>
+                    <span class="text-2xl font-bold text-neonPurple mb-2 block">1895</span>
+                    <h4 class="text-lg font-bold mb-2">The Foundation</h4>
+                    <p class="text-white/40 text-sm">Alexander Thorne opens the first workshop in London.</p>
+                </div>
+                <div class="border-l-2 border-electricBlue pl-8 relative reveal">
+                    <div class="w-4 h-4 bg-electricBlue rounded-full absolute -left-[9px] top-2"></div>
+                    <span class="text-2xl font-bold text-electricBlue mb-2 block">1942</span>
+                    <h4 class="text-lg font-bold mb-2">The War Secrets</h4>
+                    <p class="text-white/40 text-sm">Arcane contributes misdirection techniques to the war effort.</p>
+                </div>
+                <div class="border-l-2 border-mysticPink pl-8 relative reveal">
+                    <div class="w-4 h-4 bg-mysticPink rounded-full absolute -left-[9px] top-2"></div>
+                    <span class="text-2xl font-bold text-mysticPink mb-2 block">1988</span>
+                    <h4 class="text-lg font-bold mb-2">Las Vegas Debut</h4>
+                    <p class="text-white/40 text-sm">The Museum moves to Nevada, its permanent home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Sanctum (360 Experience Mockup) -->
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div
+                class="glass p-12 lg:p-20 rounded-[4rem] border border-white/10 flex flex-col lg:flex-row items-center gap-16">
+                <div class="flex-1 reveal">
+                    <h2 class="text-4xl md:text-5xl font-magic font-bold mb-8">The Digital <span
+                            class="text-neonPurple italic">Sanctum</span></h2>
+                    <p class="text-white/60 mb-8 text-lg leading-relaxed">
+                        Can't visit in person? Experience our main chamber in stunning 8K 360° virtual reality. Walk
+                        through the hall of automatons and inspect every artifact from your own home.
+                    </p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-4 text-white/40"><i
+                                class="ri-checkbox-circle-fill text-neonPurple text-xl"></i> Fully interactive artifact
+                            inspections</li>
+                        <li class="flex items-center gap-4 text-white/40"><i
+                                class="ri-checkbox-circle-fill text-neonPurple text-xl"></i> Guided narration by Arthur
+                            Thorne</li>
+                        <li class="flex items-center gap-4 text-white/40"><i
+                                class="ri-checkbox-circle-fill text-neonPurple text-xl"></i> Compatible with all VR
+                            headsets</li>
+                    </ul>
+                    <button
+                        class="px-10 py-4 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30px_#bc13fe] transition-all">Launch
+                        VR Experience</button>
+                </div>
+                <div class="flex-1 relative group reveal">
+                    <img src="https://images.pexels.com/photos/3761157/pexels-photo-3761157.jpeg"
+                        class="rounded-[3rem] border border-white/20 shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:rotate-1"
+                        alt="VR Experience">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 group-hover:scale-125 transition-transform">
+                            <i class="ri-play-fill text-4xl text-white"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,11 +652,11 @@
 
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
             <div class="lg:col-span-1">
-                <div class="flex items-center gap-2 mb-6">
+                <a href="index.html" class="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span
                         class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
                 <p class="text-white/50 max-w-sm mb-8 leading-relaxed">
                     Unlocking the secrets of the impossible since 1895. Join our legacy of wonder and mastery.
                 </p>
@@ -425,7 +727,8 @@
 
         <div
             class="max-w-7xl mx-auto px-4 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] uppercase tracking-widest font-bold">
-            <p>© 2026 Arcane Wonders. All Rights Reserved.</p>
+            <p>© 2026 <a href="index.html" class="hover:text-neonPurple transition-colors">Arcane Wonders</a>. All
+                Rights Reserved.</p>
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
@@ -435,31 +738,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const reveals = document.querySelectorAll('.reveal');
-            const observerOptions = { threshold: 0.1 };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-
-            reveals.forEach(el => observer.observe(el));
-
-            // Mobile menu toggle
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-

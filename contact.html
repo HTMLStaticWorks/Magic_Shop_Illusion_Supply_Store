@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,10 +45,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center space-x-6">
@@ -64,14 +64,15 @@
 
                 <!-- Utilities -->
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="w-10 h-10 flex items-center justify-center hover:bg-white/10 rounded-lg transition-all" title="Toggle Theme">
+                    <button id="theme-toggle"
+                        class="hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all" title="Toggle Theme">
                         <i class="ri-sun-line text-xl"></i>
                     </button>
-                    <button id="rtl-toggle" class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:border-neonPurple transition-all" title="Switch Direction">
+                    <button id="rtl-toggle" class="rtl-toggle-btn hidden sm:flex w-10 h-10 items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all" title="Switch Direction">
                         RTL
                     </button>
-                    <div class="hidden sm:flex items-center gap-3 mr-2">
-                        <a href="signup.html" class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple transition-all">Signup</a>
+                    <div class="hidden lg:flex items-center gap-3 mr-2">
+                        <a href="signup.html" class="h-10 px-4 flex items-center justify-center bg-white/5 border border-white/20 rounded-lg text-sm font-bold hover:bg-neonPurple/20 hover:border-neonPurple hover:shadow-[0_0_15px_rgba(188,19,254,0.3)] transition-all">Signup</a>
                     </div>
                     <button id="menu-btn" class="lg:hidden p-2 hover:bg-white/10 rounded-full">
                         <i class="ri-menu-line text-2xl"></i>
@@ -90,14 +91,27 @@
             <a href="stage-supplies.html" class="text-lg font-medium hover:text-neonPurple transition-colors border-b border-white/5 pb-2">Stage Gear</a>
             <a href="booking.html" class="text-lg font-medium text-gold border-b border-white/5 pb-2">Bookings</a>
             <a href="contact.html" class="text-lg font-medium text-neonPurple border-b border-white/5 pb-2">Contact</a>
+            <div class="flex items-center gap-4 pt-4 border-t border-white/5 sm:hidden">
+                <button id="theme-toggle"
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Toggle Theme">
+                    <i class="ri-sun-line text-xl"></i>
+                </button>
+                <button id="rtl-toggle"
+                    class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-lg text-xs font-bold hover:bg-white/10 hover:border-neonPurple hover:text-neonPurple transition-all"
+                    title="Switch Direction">
+                    RTL
+                </button>
+            </div>
             <div class="pt-4">
-                <a href="signup.html" class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
+                <a href="signup.html"
+                    class="block w-full py-3 text-center bg-neonPurple rounded-xl font-bold text-sm">Signup</a>
             </div>
         </div>
     </nav>
 
     <!-- Banner Hero -->
-    <section class="relative h-[40vh] min-h-[300px] flex items-center overflow-hidden mt-20">
+    <section class="relative h-auto min-h-[300px] py-20 md:py-0 md:h-[40vh] md:min-h-[300px] flex items-center overflow-hidden mt-20">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="Contact Hero">
             <div class="absolute inset-0 bg-deepBlack/60 backdrop-blur-[2px]"></div>
@@ -226,10 +240,10 @@
         
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
             <div class="lg:col-span-1">
-                <div class="flex items-center gap-2 mb-6">
+                <a href="index.html" class="flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
                     <i class="ri-magic-line text-3xl text-neonPurple neon-text-purple"></i>
                     <span class="text-2xl font-magic font-bold tracking-wider bg-gradient-to-r from-neonPurple to-electricBlue bg-clip-text text-transparent">ARCANE</span>
-                </div>
+                </a>
                 <p class="text-white/50 max-w-sm mb-8 leading-relaxed">
                     Unlocking the secrets of the impossible since 1895. Join our legacy of wonder and mastery.
                 </p>
@@ -274,7 +288,7 @@
         </div>
         
         <div class="max-w-7xl mx-auto px-4 mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white/30 text-[10px] uppercase tracking-widest font-bold">
-            <p>© 2026 Arcane Wonders. All Rights Reserved.</p>
+            <p>© 2026 <a href="index.html" class="hover:text-neonPurple transition-colors">Arcane Wonders</a>. All Rights Reserved.</p>
             <div class="flex gap-8">
                 <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition-colors">Terms of Service</a>

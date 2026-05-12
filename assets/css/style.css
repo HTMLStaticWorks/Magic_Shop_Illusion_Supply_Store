@@ -90,6 +90,28 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
+.animate-scroll {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.animate-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
 @keyframes pulse-glow {
     0%, 100% { opacity: 0.5; filter: blur(20px); }
     50% { opacity: 0.8; filter: blur(30px); }
@@ -142,6 +164,7 @@ body {
 
 /* Light Mode Utility Overrides */
 [data-theme="light"] .text-white { color: #1a1a1a !important; }
+[data-theme="light"] .bg-black\/60.text-white { color: white !important; }
 [data-theme="light"] .text-white\/10 { color: rgba(26, 26, 26, 0.1) !important; }
 [data-theme="light"] .text-white\/20 { color: rgba(26, 26, 26, 0.2) !important; }
 [data-theme="light"] .text-white\/30 { color: rgba(26, 26, 26, 0.3) !important; }
@@ -267,6 +290,11 @@ body {
 [data-theme="light"] section:first-of-type .border-white\/40 { border-color: rgba(255, 255, 255, 0.4) !important; }
 [data-theme="light"] section:first-of-type .border-white\/50 { border-color: rgba(255, 255, 255, 0.5) !important; }
 
+[data-theme="light"] section:first-of-type .bg-white { background-color: white !important; }
+[data-theme="light"] section:first-of-type .text-deepBlack { color: #050505 !important; }
+[data-theme="light"] section:first-of-type .bg-neonPurple { background-color: #bc13fe !important; }
+[data-theme="light"] section:first-of-type .hover\:text-white:hover { color: white !important; }
 [data-theme="light"] section:first-of-type .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05) !important; }
 [data-theme="light"] section:first-of-type .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1) !important; }
 [data-theme="light"] section:first-of-type .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2) !important; }
+

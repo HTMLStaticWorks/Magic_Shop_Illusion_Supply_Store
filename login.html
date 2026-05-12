@@ -1,6 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            const dir = localStorage.getItem('dir') || 'ltr';
+            document.documentElement.setAttribute('dir', dir);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Arcane Wonders</title>
@@ -55,13 +63,22 @@
     </style>
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="bg-deepBlack text-white min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
+<body class="bg-deepBlack min-h-screen flex items-center justify-center p-4 overflow-x-hidden">
     <!-- Background Effects -->
     <div class="magic-bg"></div>
     <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-neonPurple/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
     <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-electricBlue/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-delay: 2s;"></div>
 
-    <div class="w-full max-w-md relative z-10">
+    <div class="fixed top-8 right-8 z-50 flex items-center gap-3">
+        <button class="theme-toggle-btn w-10 h-10 flex items-center justify-center glass rounded-xl hover:border-neonPurple hover:text-neonPurple transition-all" title="Toggle Theme">
+            <i class="ri-sun-line text-xl"></i>
+        </button>
+        <button class="rtl-toggle-btn w-10 h-10 flex items-center justify-center glass rounded-xl text-xs font-bold hover:border-neonPurple hover:text-neonPurple transition-all" title="Switch Direction">
+            RTL
+        </button>
+    </div>
+
+    <div class="w-full max-w-lg relative z-10 py-12">
         <!-- Login Card -->
         <div class="glass-form rounded-[2.5rem] p-8 md:p-10 border border-white/10 reveal" id="form-reveal" style="transition-delay: 0.1s;">
             <!-- Logo Inside -->
@@ -97,25 +114,16 @@
                     </div>
                 </div>
 
-                <div class="space-y-1">
-                    <label class="text-xs font-bold text-white/50 uppercase tracking-widest ml-1">Confirm Password</label>
-                    <div class="relative group">
-                        <i class="ri-shield-check-line absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-neonPurple transition-colors"></i>
-                        <input type="password" placeholder="••••••••" 
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl pl-12 pr-12 py-4 focus:outline-none input-glow transition-all text-sm text-white">
-                        <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors toggle-password">
-                            <i class="ri-eye-line"></i>
-                        </button>
+                <div class="flex items-center justify-between py-2">
+                    <div class="flex items-center gap-2">
+                        <input type="checkbox" id="remember" class="w-4 h-4 rounded border-white/10 bg-white/5 text-neonPurple focus:ring-neonPurple focus:ring-offset-deepBlack">
+                        <label for="remember" class="text-xs text-white/50 cursor-pointer hover:text-white transition-colors">Remember Me</label>
                     </div>
+                    <a href="#" class="text-xs text-neonPurple hover:underline">Forgot Password?</a>
                 </div>
 
-                <div class="flex items-center gap-2 ml-1 py-2">
-                    <input type="checkbox" id="remember" class="w-4 h-4 rounded border-white/10 bg-white/5 text-neonPurple focus:ring-neonPurple focus:ring-offset-deepBlack">
-                    <label for="remember" class="text-xs text-white/50 cursor-pointer hover:text-white transition-colors">Keep me signed in</label>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30px_#bc13fe] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
-                    <span>Unveil Account</span>
+                <button type="submit" class="w-full py-4 bg-neonPurple rounded-2xl font-bold hover:shadow-[0_0_30_#bc13fe] hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+                    <span>Login</span>
                     <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
                 </button>
             </form>
@@ -143,6 +151,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal');

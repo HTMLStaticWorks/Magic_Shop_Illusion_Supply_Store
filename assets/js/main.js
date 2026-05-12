@@ -1,44 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle-btn, #theme-toggle');
     const htmlElement = document.documentElement;
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = localStorage.getItem('theme') || 'light';
 
     htmlElement.setAttribute('data-theme', currentTheme);
     updateThemeIcon(currentTheme);
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
             const theme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
             updateThemeIcon(theme);
         });
-    }
+    });
 
     function updateThemeIcon(theme) {
-        const icon = document.querySelector('#theme-toggle i');
-        if (icon) {
+        const icons = document.querySelectorAll('.theme-toggle-btn i, #theme-toggle i');
+        icons.forEach(icon => {
             icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
-        }
+        });
     }
 
     // RTL/LTR Toggle
-    const rtlToggle = document.getElementById('rtl-toggle');
-    if (rtlToggle) {
-        rtlToggle.addEventListener('click', () => {
-            const currentDir = htmlElement.getAttribute('dir') || 'ltr';
-            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            htmlElement.setAttribute('dir', newDir);
-            rtlToggle.innerText = newDir === 'ltr' ? 'RTL' : 'LTR';
-            localStorage.setItem('dir', newDir);
+    const rtlToggles = document.querySelectorAll('.rtl-toggle-btn, #rtl-toggle');
+    if (rtlToggles.length > 0) {
+        rtlToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentDir = htmlElement.getAttribute('dir') || 'ltr';
+                const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+                htmlElement.setAttribute('dir', newDir);
+                updateRTLText(newDir);
+                localStorage.setItem('dir', newDir);
+            });
+        });
+    }
+
+    function updateRTLText(dir) {
+        const toggles = document.querySelectorAll('.rtl-toggle-btn, #rtl-toggle');
+        toggles.forEach(toggle => {
+            if (toggle.tagName === 'BUTTON' || toggle.tagName === 'A') {
+                toggle.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+                        node.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+                    }
+                });
+            }
         });
     }
 
     // Initialize Dir from LocalStorage
     const savedDir = localStorage.getItem('dir') || 'ltr';
     htmlElement.setAttribute('dir', savedDir);
-    if (rtlToggle) rtlToggle.innerText = savedDir === 'ltr' ? 'RTL' : 'LTR';
+    updateRTLText(savedDir);
 
     // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
@@ -68,6 +85,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('i');
+            
+            // Toggle active state
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            
+            // Close other items
+            faqItems.forEach(otherItem => {
+                otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                otherItem.querySelector('i').style.transform = 'rotate(0deg)';
+                otherItem.classList.remove('border-neonPurple/50');
+            });
+
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(45deg)';
+                item.classList.add('border-neonPurple/50');
+            }
+        });
+    });
 
     // Particle/Spotlight Follow
     document.addEventListener('mousemove', (e) => {
