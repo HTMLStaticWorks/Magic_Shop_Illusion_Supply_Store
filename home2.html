@@ -163,7 +163,7 @@
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-20 max-w-sm mx-auto sm:max-w-none">
                         <a href="#"
-                            class="w-full sm:w-auto px-10 py-5 bg-white text-deepBlack rounded-full font-bold hover:bg-neonPurple hover:text-white transition-all text-center flex items-center justify-center gap-2 group">
+                            class="w-full sm:w-auto px-10 py-5 bg-white text-deepBlack rounded-full font-bold hover:bg-neonPurple hover:text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(188,19,254,0.4)] transition-all text-center flex items-center justify-center gap-2 group">
                             Read Article <i class="ri-book-open-line group-hover:rotate-12 transition-transform"></i>
                         </a>
                         <a href="#"
@@ -233,11 +233,11 @@
             <h2 class="text-4xl md:text-5xl font-magic font-bold">Trending <span
                     class="italic text-white">Illusions</span></h2>
         </div>
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pb-12 items-stretch">
             <!-- Card 1 -->
             <div
-                class="glass p-4 rounded-[2.5rem] border border-white/5 group transition-all reveal">
-                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group transition-all reveal flex flex-col h-full">
+                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/6255136/pexels-photo-6255136.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         alt="Trick">
@@ -245,20 +245,20 @@
                         class="absolute top-4 left-4 bg-neonPurple text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                         New Release</div>
                 </div>
-                <div class="px-4 pb-4">
+                <div class="px-4 pb-4 flex flex-col flex-grow">
                     <h4 class="text-2xl font-bold mb-4">Shadow Coin Pro</h4>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-xl font-bold text-gold">$49.99</span>
+                    <div class="flex justify-between items-end pt-4 border-t border-white/5 mt-auto">
+                        <span class="text-xl font-bold text-gold leading-none">$49.99</span>
                         <button
-                            class="px-6 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-neonPurple hover:border-neonPurple transition-all text-sm font-bold">Add
+                            class="px-5 h-10 bg-white/5 border border-white/10 rounded-xl hover:bg-neonPurple hover:border-neonPurple transition-all text-xs font-bold whitespace-nowrap">Add
                             to Vault</button>
                     </div>
                 </div>
             </div>
             <!-- Card 2 -->
             <div
-                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-electricBlue/30 transition-all reveal delay-100">
-                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-electricBlue/30 transition-all reveal delay-100 flex flex-col h-full">
+                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/20797903/pexels-photo-20797903.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         alt="Trick">
@@ -266,20 +266,20 @@
                         class="absolute top-4 left-4 bg-electricBlue text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                         Best Seller</div>
                 </div>
-                <div class="px-4 pb-4">
+                <div class="px-4 pb-4 flex flex-col flex-grow">
                     <h4 class="text-2xl font-bold mb-4">Venom Levitation</h4>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-xl font-bold text-gold">$89.99</span>
+                    <div class="flex justify-between items-end pt-4 border-t border-white/5 mt-auto">
+                        <span class="text-xl font-bold text-gold leading-none">$89.99</span>
                         <button
-                            class="px-6 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-electricBlue hover:border-electricBlue transition-all text-sm font-bold">Add
+                            class="px-5 h-10 bg-white/5 border border-white/10 rounded-xl hover:bg-electricBlue hover:border-electricBlue transition-all text-xs font-bold whitespace-nowrap">Add
                             to Vault</button>
                     </div>
                 </div>
             </div>
             <!-- Card 3 -->
             <div
-                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-mysticPink/30 transition-all reveal delay-200">
-                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-mysticPink/30 transition-all reveal delay-200 flex flex-col h-full">
+                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/17139407/pexels-photo-17139407.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         alt="Trick">
@@ -287,20 +287,20 @@
                         class="absolute top-4 left-4 bg-mysticPink text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                         Staff Pick</div>
                 </div>
-                <div class="px-4 pb-4">
+                <div class="px-4 pb-4 flex flex-col flex-grow">
                     <h4 class="text-2xl font-bold mb-4">Oracle Deck</h4>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-xl font-bold text-gold">$24.99</span>
+                    <div class="flex justify-between items-end pt-4 border-t border-white/5 mt-auto">
+                        <span class="text-xl font-bold text-gold leading-none">$24.99</span>
                         <button
-                            class="px-6 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-mysticPink hover:border-mysticPink transition-all text-sm font-bold">Add
+                            class="px-5 h-10 bg-white/5 border border-white/10 rounded-xl hover:bg-mysticPink hover:border-mysticPink transition-all text-xs font-bold whitespace-nowrap">Add
                             to Vault</button>
                     </div>
                 </div>
             </div>
             <!-- Card 4 -->
             <div
-                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-gold/30 transition-all reveal delay-300">
-                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6">
+                class="glass p-4 rounded-[2.5rem] border border-white/5 group hover:border-gold/30 transition-all reveal delay-300 flex flex-col h-full lg:col-start-2 xl:col-start-auto">
+                <div class="h-64 rounded-[2rem] overflow-hidden relative mb-6 flex-shrink-0">
                     <img src="https://images.pexels.com/photos/11634143/pexels-photo-11634143.jpeg"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         alt="Trick">
@@ -308,12 +308,12 @@
                         class="absolute top-4 left-4 bg-gold text-deepBlack text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                         Limited Edition</div>
                 </div>
-                <div class="px-4 pb-4">
+                <div class="px-4 pb-4 flex flex-col flex-grow">
                     <h4 class="text-2xl font-bold mb-4">Phantom Rings</h4>
-                    <div class="flex justify-between items-center pt-4 border-t border-white/5">
-                        <span class="text-xl font-bold text-gold">$129.99</span>
+                    <div class="flex justify-between items-end pt-4 border-t border-white/5 mt-auto">
+                        <span class="text-xl font-bold text-gold leading-none">$129.99</span>
                         <button
-                            class="px-6 py-2 bg-white/5 border border-white/10 rounded-xl hover:bg-gold hover:text-deepBlack hover:border-gold transition-all text-sm font-bold">Add
+                            class="px-5 h-10 bg-white/5 border border-white/10 rounded-xl hover:bg-gold hover:text-deepBlack hover:border-gold transition-all text-xs font-bold whitespace-nowrap">Add
                             to Vault</button>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
                             class="absolute top-6 left-6 bg-neonPurple/90 backdrop-blur-md text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/20">
                             Technique</div>
                     </div>
-                    <div class="px-2">
+                    <div class="px-2 flex flex-col flex-grow">
                         <div
                             class="flex items-center gap-4 text-[10px] font-bold text-white/30 uppercase tracking-widest mb-4">
                             <span>Alexander Thorne</span>
@@ -363,7 +363,7 @@
                             Mastering the Perfect Faro Shuffle: A Comprehensive Guide</h3>
                         <p class="text-white/40 text-sm leading-relaxed mb-8 line-clamp-2">Learn the mathematical
                             precision behind one of card magic's most difficult and rewarding sleights.</p>
-                        <a href="#" class="text-sm font-bold text-neonPurple flex items-center gap-2 group/link">
+                        <a href="#" class="text-sm font-bold text-neonPurple flex items-center gap-2 group/link mt-auto">
                             Read Secret <i
                                 class="ri-arrow-right-up-line group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform"></i>
                         </a>
@@ -382,7 +382,7 @@
                             class="absolute top-6 left-6 bg-electricBlue/90 backdrop-blur-md text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-white/20">
                             History</div>
                     </div>
-                    <div class="px-2">
+                    <div class="px-2 flex flex-col flex-grow">
                         <div
                             class="flex items-center gap-4 text-[10px] font-bold text-white/30 uppercase tracking-widest mb-4">
                             <span>Marcus Jaxon</span>
@@ -394,7 +394,7 @@
                             Forgotten Giants: The Lost Automatons of the 18th Century</h3>
                         <p class="text-white/40 text-sm leading-relaxed mb-8 line-clamp-2">Exploring the clockwork
                             marvels that blurred the line between science and sorcery in royal courts.</p>
-                        <a href="#" class="text-sm font-bold text-electricBlue flex items-center gap-2 group/link">
+                        <a href="#" class="text-sm font-bold text-electricBlue flex items-center gap-2 group/link mt-auto">
                             Explore Archive <i
                                 class="ri-arrow-right-up-line group-hover/link:-translate-y-1 group-hover/link:translate-x-1 transition-transform"></i>
                         </a>

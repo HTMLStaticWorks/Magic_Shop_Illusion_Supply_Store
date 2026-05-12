@@ -111,6 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Navbar Scroll Effect
+    const navbar = document.querySelector('nav');
+    if (navbar) {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+    }
+
     // Particle/Spotlight Follow
     document.addEventListener('mousemove', (e) => {
         const spotlights = document.querySelectorAll('.spotlight-follow');
